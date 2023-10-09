@@ -1,0 +1,40 @@
+body, html {
+    padding: 0;
+    margin: 0;
+  }
+
+@font-face {
+  font-family: "Regular";
+  src: local("SFPRODISPLAYREGULAR"),
+    url("./fonts/SFPRODISPLAYREGULAR.OTF") format("truetype");
+}
+
+@font-face {
+  font-family: "Medium";
+  src: local("SFPRODISPLAYMEDIUM"),
+    url("./fonts/SFPRODISPLAYMEDIUM.OTF") format("truetype");
+}
+
+@font-face {
+  font-family: "Bold";
+  src: local("SFPRODISPLAYBOLD"),
+    url("./fonts/SFPRODISPLAYBOLD.OTF") format("truetype");
+}
+
+@font-face {
+  font-family: "Heavyitalic";
+  src: local("SFPRODISPLAYHEAVYITALIC"),
+    url("./fonts/SFPRODISPLAYHEAVYITALIC.OTF") format("truetype");
+}
+
+@font-face {
+  font-family: "LufgaSB";
+  src: local("LufgaSemiBold"),
+    url("./fonts/LufgaSemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "LufgaR";
+  src: local("LufgaRegular"),
+    url("./fonts/LufgaRegular.ttf") format("truetype");
+}
