@@ -5,15 +5,19 @@ function Appbar() {
     <div style={{
         display: 'flex',
         justifyContent: 'space-between',
+        alignItems: 'center',
         background: '#0f0c20',
         height: '50px',
         paddingLeft: '15%',
         paddingRight: '15%',
-        paddingTop: '2%',
-        paddingBottom: '1%'
+        height: '10vh'
     }}>
         <div>
-            <Typography variant='h5' style={{color: 'white', fontFamily: 'LufgaR'}}>core.ai</Typography>
+            <Button className='logo' style={{
+                textTransform: 'lowercase'
+            }}>
+                <Typography variant='h5' style={{color: 'white', fontFamily: 'LufgaR'}}>core.ai</Typography>
+            </Button>
         </div>
         <div>
             <Button style={{
