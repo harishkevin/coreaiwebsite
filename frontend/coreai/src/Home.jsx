@@ -1,47 +1,93 @@
 import {Typography, Button, TextField} from '@mui/material'
 import Courseslist from './Courseslist'
+import Aboutus from './Aboutus'
+import Companies from './Companies'
+import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import emailjs from '@emailjs/browser';
+import Avatar from '@mui/material/Avatar';
 
 function Home() {
+
     return <>
     <div>
         <Frontbanner/>
         <Aboutus/>
+        <Companies/>
         <Courses/>
         <Mentors/>
         <Studentfeedback/>
         <Joinwithus/>
-        <Stayinformed/>
-        <Infobanner/>
     </div>
     </>
 }
 
 function Frontbanner() {
+
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+    const [phone, setPhone] = useState('');
+    const navigate = useNavigate()
+
+    const sendEmail = (e) => {
+    
+        e.preventDefault();
+
+        // Your Email.js service ID, template ID, and user ID
+        const serviceID = 'service_cd77sil';
+        const templateID = 'template_kf1unc3';
+        const userID = '8yfksu4z0DA2_KPvJ';
+
+        emailjs.send(serviceID, templateID, {
+            user_name: name,
+            message: message,
+            user_email: email,
+            user_phone: phone
+        }, userID)
+            .then((response) => {
+            console.log('Email sent successfully:', response);
+            }, (error) => {
+            console.error('Email could not be sent:', error);
+            });
+
+        // Clear the form fields after sending the email
+        setName('');
+        setEmail('');
+        setMessage('');
+
+    }
+
     return <>
-    <div style={{
+    <div className='paddingLR flexSwitch' style={{
         display: 'flex',
         background: '#0f0c20',
-        paddingLeft: '15%',
-        paddingRight: '15%',
         paddingTop: '5%',
         paddingBottom: '10%'
     }}>
-        <div style={{
-            width: '50%'
-        }}>
+        <div className='changeWidth width60 mobileTopBottomSpace'>
             <div>
-                <div style={{
+                <div className='mainHeadingWeb' style={{
                     background: 'linear-gradient(to right, #7549F2, #DE53F7)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent'
                 }}>
-                    <Typography variant='h2' style={{fontFamily: 'Bold'}}><strong>Up Your Skill To Advance Your Career</strong></Typography>
+                    <Typography variant='h2' style={{fontFamily: 'Bold'}}>Learn to Code Generative AI like ChatGPT from Experienced AI Developers</Typography>
                 </div>
+                <div className='mainHeadingMobile' style={{
+                    background: 'linear-gradient(to right, #7549F2, #DE53F7)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                }}>
+                    <Typography variant='h3' style={{fontFamily: 'Bold'}}>Learn to Code Generative AI like ChatGPT from Experienced AI Developers</Typography>
+                </div>
+                <br />
                 <br />
                 <Typography style={{
                     color: '#676e83 ',
                     fontFamily: 'Regular'
                 }}>Provide you with latest online learning system and material that helps your knowledge and growing</Typography>
+                <br />
                 <br />
                 <Button variant='contained' style={{
                     borderRadius: '50px',
@@ -49,25 +95,28 @@ function Frontbanner() {
                     border: '1.5px solid #fe7f21',
                     textTransform : 'capitalize',
                     fontFamily: 'LufgaR'
-                }}>Sign up for free <div style={{color: '#fe7f21', marginLeft: 5}}>&gt;</div></Button>
+                }} onClick={() => {
+                    navigate('/courses')
+                }}>Join Now <div style={{color: '#fe7f21', marginLeft: 5}}>&gt;</div></Button>
             </div>
         </div>
-        <div style={{
-            width: '50%',
+        <div className='changeWidth width40 mobileTopBottomSpace' style={{
             display: 'flex',
-            justifyContent: 'center'
+            justifyContent: 'center',
+            height: 'auto'
         }}>
             {/* <img style={{width: '60%'}} src="../assets/student4.png" alt="student pic" /> */}
             {/* <img style={{width: '60%'}} src="../assets/student5.png" alt="student pic" /> */}
             <div style={{
             background: '#6837f5',
-            width: '70%',
+            width: '90%',
             borderRadius: 20,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             paddingTop: '5%',
-            paddingBottom: '5%'
+            paddingBottom: '5%',
+            height: 500
         }}>
             {/* <img style={{width: '30%'}} src="../assets/student3.png" alt="" /> */}
             <br />
@@ -76,52 +125,48 @@ function Frontbanner() {
                 fontFamily: 'LufgaR'
             }}>Contact us now</Typography>
             <br />
-            <TextField style={{width: '85%'}} label="name" variant='outlined' size='small' type='text' InputLabelProps={{style: {fontFamily: 'LufgaR', color: 'white'}}} onChange={(e)=>{
-                setUsername(e.target.value)
-            }}></TextField>
-            <br />
-            <TextField style={{width: '85%'}} label="email" variant='outlined' size='small' type='text' InputLabelProps={{style: {fontFamily: 'LufgaR', color: 'white'}}} onChange={(e)=>{
-                setPassword(e.target.value)
-            }}></TextField>
-            <br />
-            <TextField style={{width: '85%'}} label="mobile number" variant='outlined' size='small' InputLabelProps={{style: {fontFamily: 'LufgaR', color: 'white'}}} onChange={(e) =>{
-                setConfirmPassword(e.target.value)
-            }}></TextField>
-            <br />
-            <TextField style={{width: '85%'}} label="Your message" multiline rows={4} defaultValue="Default Value" InputLabelProps={{style: {fontFamily: 'LufgaR', color: 'white'}}}/>
-        <br />
-            <Button variant='contained' style={{
-                 textTransform : 'none',
-                 borderRadius : '50px',
-                 background: '#fe7f21',
-                 fontFamily: 'LufgaR',
-                 boxShadow: 'none',
-                 width: '85%'
-            }} onClick={()=>{
-                if (password === confirmPassword) {
-                    fetch('http://localhost:3000/user/signup',{
-                    method: 'POST',
-                    body: JSON.stringify({
-                        username: username,
-                        password: password
-                    }),
-                    headers: {
-                        'content-type': 'application/json'
-                    }
-                }).then((res) =>{
-                    res.json().then((data) =>{
-                        console.log(data)
-                        setUser({
-                            isLoading: false,
-                            userEmail: username
-                        })
-                        navigate('/')
-                    })
-                })
-                } else {
-                    console.log('password does not match')
-                }
-            }}>Send your message</Button>
+                    <TextField label="name" variant='outlined' size='small' type="text" name="user_name" style={{
+                        width: '85%'
+                        }} InputLabelProps={{style: {fontFamily: 'LufgaR', color: 'white'}}}  onChange={(e) => {
+                            setName(e.target.value)
+                        }}/>
+                    <br />
+                    <TextField label="phone" variant='outlined' size='small' type="text" name="user_phone" style={{
+                        width: '85%'
+                        }} InputLabelProps={{style: {fontFamily: 'LufgaR', color: 'white'}}}  onChange={(e) => {
+                            setPhone(e.target.value)
+                        }}/>
+                    <br />
+                    <TextField label="email" variant='outlined' size='small' type="text" name="user_email" style={{
+                        width: '85%'
+                        }} InputLabelProps={{style: {fontFamily: 'LufgaR', color: 'white'}}}  onChange={(e) => {
+                            setEmail(e.target.value)
+                        }}/>
+                    <br />
+                    <TextField label="Your message" multiline rows={4} defaultValue=""  size='small' type="text" name="user_name" style={{
+                        width: '85%'
+                        }} InputLabelProps={{style: {fontFamily: 'LufgaR', color: 'white'}}}  onChange={(e) => {
+                            setMessage(e.target.value)
+                        }}/>
+                    <br />
+                    <Button variant='contained' style={{
+                    textTransform : 'none',
+                    borderRadius : '50px',
+                    background: '#fe7f21',
+                    fontFamily: 'LufgaR',
+                    boxShadow: 'none',
+                    width: '85%'
+                        }} value='Send' type='submit' onClick={sendEmail}>Send your message</Button>
+                    <Typography style={{
+                    color: '#86868B',
+                    fontFamily: 'LufgaR',
+                    paddingTop: 6
+                }}>or</Typography>
+                <Typography style={{
+                    color: 'white',
+                    fontFamily: 'LufgaR',
+                    paddingTop: 6
+                }}>write us here: <a style={{color: '#fe7f21'}} href="mailto:michael@coreai.in?subject=course%20enquiry" target='_blank'>michael@coreai.in</a></Typography>
         </div>
         </div>
     </div>
@@ -129,11 +174,11 @@ function Frontbanner() {
 }
 
 function Courses() {
+    const navigate = useNavigate()
+
     return <>
-    <div style={{
+    <div className='paddingLR flexSwitch mobileTopBottomSpace' style={{
         background: '#f7f8f9',
-        paddingLeft: '15%',
-        paddingRight: '15%',
         paddingTop: '5%',
         paddingBottom: '7%'
     }}>
@@ -153,9 +198,11 @@ function Courses() {
             <Typography style={{
                 color: '#86868B',
                 fontFamily: 'Regular'
-            }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias maiores sit repellendus unde illum. Magni neque labore amet cupiditate aspernatur ut minus iusto, esse qui repellat molestias ad libero iure vitae voluptates quibusdam recusandae maxime in? Tempore, harum excepturi eius aliquam illo aperiam accusamus ipsam nam, voluptas voluptatum vitae dolorem.</Typography>
+            }}>At CoreAI, our courses are meticulously crafted to empower you with the latest industry-relevant skills in Python, Machine Learning, Data Science, and more. Our comprehensive curriculum, designed and taught by seasoned experts, provides you with a solid foundation and practical experience. Whether you're a beginner or a professional looking to upskill, our courses cater to diverse skill levels, ensuring you're well-prepared for a successful career in the technology-driven world. Join our courses to unlock your potential and thrive in the ever-evolving tech landscape.</Typography>
+            <br />
             <br />
             <Courseslist></Courseslist>
+            <br />
             <br />
             <Button variant='contained' style={{
                 textTransform : 'capitalize',
@@ -163,6 +210,8 @@ function Courses() {
                 background: '#6837f5',
                 boxShadow: 'none',
                 fontFamily: 'LufgaR'
+            }} onClick={() => {
+                navigate('/courses')
             }}>See all courses</Button>
         </center>
 
@@ -170,100 +219,14 @@ function Courses() {
     </>
 }
 
-function Aboutus() {
-    return <>
-    <div style={{
-        display: 'flex',
-        paddingLeft: '15%',
-        paddingRight: '15%',
-        background: '#0f0c20',
-        paddingBottom: '10%'
-    }}>
-        <div style={{
-            width: '50%'
-        }}>
-            <div>
-                <Typography variant='h4' style={{
-                    color: 'white',
-                    fontFamily: 'Regular'
-                }}>About us</Typography>
-                <br />
-                <div style={{
-                    background: 'linear-gradient(to right, #7549F2, #DF58D2, #ED787C)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent'
-                }}>
-                    <Typography variant='h4' style={{fontFamily: 'Regular'}}>Unlocking a world of learning</Typography>
-                </div>
-                <br />
-                <Typography style={{
-                    color: '#86868B',
-                    fontFamily: 'Regular'
-                }}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores, possimus consectetur perferendis animi soluta earum eveniet fugit fugiat, dignissimos inventore, enim ipsum? Molestiae architecto facere modi. Maiores amet sapiente eum?</Typography>
-            </div>
-            
-
-        </div>
-        <div style={{
-            width: '50%'
-        }}>
-            <div style={{
-                display: 'flex',
-                justifyContent: 'space-evenly'
-            }}>
-                <div style={{
-                    background: '#f4f4f4',
-                    borderRadius: '30px',
-                    padding: '20px',
-                    width: '35%',
-                    height: 250
-                }}>
-                    
-                    <center>
-                        <img style={{
-                            width: '80%',
-                            borderRadius: 50,
-                            height: 60,
-                            objectFit: 'cover',
-                            objectPosition: '0 1%'
-                        }} src="../assets/instructor1.jpeg" alt="" />
-                        <Typography variant='h6' style={{fontFamily: 'LufgaR'}}>Experienced Instructor</Typography>
-                    </center>
-                </div>
-                <div style={{
-                    background: '#f3c7c5',
-                    borderRadius: '30px',
-                    padding: '20px',
-                    width: '35%',
-                    height: 250
-                }}>
-                    <Typography variant='h6' style={{fontFamily: 'LufgaR'}}>Diverse Course Catlogue</Typography>
-                </div>
-                {/* <div style={{
-                    background: '#b6d7fe',
-                    borderRadius: '30px',
-                    padding: '20px'
-                }}>
-                    <Typography variant='h6'>Supportive Community</Typography>
-                </div> */}
-            </div>
-        </div>
-    </div>
-    </>
-}
-
 function Mentors() {
     return <>
-        <div style={{
+        <div className='paddingLR flexSwitch' style={{
             display: 'flex',
-            paddingLeft: '15%',
-            paddingRight: '15%',
             background: '#f7f8f9',
             paddingBottom: '5%'
         }}>
-            <div style={{
-                width: '50%'
-            }}>
+            <div className='changeWidth mobileTopBottomSpace'>
                 <Typography variant='h4' style={{
                     fontFamily: 'Regular'
                 }}>Mentors</Typography>
@@ -275,23 +238,23 @@ function Mentors() {
                 <p style={{
                     fontFamily: 'Regular',
                     color: '#86868B'
-                }}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt, sint quod nihil error, dignissimos mollitia cumque at, ipsam a quos beatae architecto sapiente porro laboriosam facere pariatur laborum doloremque consequatur similique placeat cum. Illo, quis? Maiores dolore, sint architecto non repudiandae deleniti, officia perspiciatis eligendi unde ex rem assumenda sapiente!</p>
-                <Button>Join now</Button>
+                }}>Our mentors are industry experts with extensive experience, providing invaluable guidance and support to our students and helping them navigate their educational and career journeys. They offer personalized insights, fostering a collaborative and nurturing learning environment where students can flourish and reach their full potential.</p>
             </div>
-            <div style={{
-                width: '50%'
-            }}>
-                img
+            <div className='changeWidth mobileTopBottomSpace'>
+                <img style={{
+                    width: '100%'
+                }} src="../assets/mentor.jpg" alt="" />
             </div>
         </div>
     </>
 }
 
 function Studentfeedback() {
+
+    const navigate = useNavigate()
+
     return <>
-    <div style={{
-        paddingLeft: '15%',
-        paddingRight: '15%',
+    <div className='paddingLR mobileTopBottomSpace' style={{
         background: '#f7f8f9',
         paddingBottom: '5%'
     }}>
@@ -305,36 +268,53 @@ function Studentfeedback() {
             <p style={{
                 color: '#86868B',
                 fontFamily: 'Regular'
-            }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab voluptatum, quo ipsam eos optio ut esse dolores libero aliquid quasi.</p>
+            }}>Customer satisfaction is at the heart of our values, and the positive feedback we receive from our clients reflects our unwavering commitment to delivering exceptional services and experiences. Their testimonials are a testament to our dedication to their success.</p>
             <br />
-            <div style={{
+            <div className='flexSwitch increaseHeightFeedback' style={{
                 display: 'flex',
-                justifyContent: 'space-evenly'
+                justifyContent: 'space-evenly',
+                alignItems: 'center'
             }}>
-                <div style={{
+                <div className='testimonyCard' style={{
                     background: '#ffffff',
                     padding : 30,
                     borderRadius: 20,
-                    width: '22%',
-                    height: 300
+                    height: 300,
+                    boxShadow: '0px 0px 30px 4px rgba(230,230,230,1)'
                 }}>
-                    <Typography>Best course of my life</Typography>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero assumenda eaque nesciunt velit temporibus sint modi natus quae voluptate quidem.</p>
+                    <Avatar alt="Remy Sharp" src="../assets/indianstudent.jpeg" />
+                    <br />
+                    <Typography style={{
+                fontFamily: 'Regular'
+            }}>Transformative Data Science Education</Typography>
+                    <p style={{
+                fontFamily: 'Regular',
+                color: '#86868B'
+            }}>"CoreAI's courses transformed my understanding of data science. The hands-on approach and the guidance of experienced instructors have been instrumental in my career growth."</p>
                     <Button variant='contained' style={{
                         borderRadius: 50,
                         background: '#6837f5',
                         textTransform: 'capitalize',
                         boxShadow: 'none'
+                    }} onClick={() => {
+                        navigate('/courses')
                     }}>Get Started</Button>
                 </div>
-                <div style={{
+                <div className='testimonyCard' style={{
                     padding : 30,
                     borderRadius: 30,
-                    width: '22%',
-                    height: 300
+                    height: 300,
+                    boxShadow: '0px 0px 30px 4px rgba(220,220,220,1)'
                 }}>
-                    <Typography>Best course of my life</Typography>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero assumenda eaque nesciunt velit temporibus sint modi natus quae voluptate quidem.</p>
+                    <Avatar alt="Remy Sharp" src="../assets/indianstudent2.jpeg" />
+                    <br />
+                    <Typography style={{
+                fontFamily: 'Regular'
+            }}>Building Confidence in Machine Learning</Typography>
+                    <p style={{
+                fontFamily: 'Regular',
+                color: '#86868B'
+            }}>"I was skeptical about switching to a career in Machine Learning, but CoreAI's mentors and practical projects gave me the confidence and skills I needed to succeed."</p>
                     <Button variant='contained' style={{
                         borderRadius: 50,
                         background: '#f7f8f9',
@@ -342,16 +322,25 @@ function Studentfeedback() {
                         border: '1.5px solid #6837f5',
                         textTransform: 'capitalize',
                         boxShadow: 'none'
+                    }} onClick={() => {
+                        navigate('/courses')
                     }}>Get Started</Button>
                 </div>
-                <div style={{
+                <div className='testimonyCard' style={{
                     padding : 30,
                     borderRadius: 30,
-                    width: '22%',
-                    height: 300
+                    height: 300,
+                    boxShadow: '0px 0px 30px 4px rgba(220,220,220,1)'
                 }}>
-                    <Typography>Best course of my life</Typography>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero assumenda eaque nesciunt velit temporibus sint modi natus quae voluptate quidem.</p>
+                    <Avatar alt="Remy Sharp" src="../assets/indianstudent3.jpeg" />
+                    <br />
+                    <Typography style={{
+                fontFamily: 'Regular'
+            }}>Seamless Transition with Mentor Support</Typography>
+                    <p style={{
+                fontFamily: 'Regular',
+                color: '#86868B'
+            }}>"The internship opportunities provided by CoreAI gave me the real-world experience I needed. The guidance and support from mentors made the transition into a new field seamless."</p>
                     <Button variant='contained' style={{
                         borderRadius: 50,
                         background: '#f7f8f9',
@@ -359,6 +348,8 @@ function Studentfeedback() {
                         border: '1.5px solid #6837f5',
                         textTransform: 'capitalize',
                         boxShadow: 'none'
+                    }} onClick={() => {
+                        navigate('/courses')
                     }}>Get Started</Button>
                 </div>
             </div>
@@ -369,27 +360,22 @@ function Studentfeedback() {
 
 function Joinwithus() {
     return <>
-    <div style={{
+    <div className='paddingLR flexSwitch' style={{
         display: 'flex',
-        paddingLeft: '15%',
-        paddingRight: '15%',
         background: '#f7f8f9',
         paddingBottom: '7%'
     }}>
-        <div style={{
-            width: '50%'
-        }}>
+        <div className='changeWidth mobileTopBottomSpace'>
             <Typography variant='h4'>Join with us</Typography>
             <br />
             <Typography variant='h4'>Embark on a journey toward achieving your personal and professional aspirations through Creative skills</Typography>
             <br />
-            <p style={{fontFamily: 'Regular', color: '#86868B'}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente magnam tenetur culpa perspiciatis possimus accusantium impedit mollitia accusamus, ipsam ab.</p>
-            <Button>Join us</Button>
+            <p style={{fontFamily: 'Regular', color: '#86868B'}}>Join us today to embark on a transformative educational journey with CoreAI. Experience the power of expert guidance, diverse course offerings, and a supportive community, all aimed at equipping you with the skills and knowledge you need to excel in the dynamic world of technology and innovation. Your success story begins here, with us.</p>
         </div>
-        <div style={{
-            width: '50%'
-        }}>
-            img
+        <div className='changeWidth mobileTopBottomSpace'>
+            <img style={{
+                width: '100%'
+            }} src="../assets/join.jpg" alt="" />
         </div>
     </div>
     </>
@@ -397,9 +383,7 @@ function Joinwithus() {
 
 function Stayinformed() {
     return <>
-    <div style={{
-        paddingLeft: '15%',
-        paddingRight: '15%',
+    <div className='paddingLR' style={{
         background: '#f7f8f9',
         paddingBottom: '7%'
     }}>
@@ -456,7 +440,10 @@ function Infobanner() {
     return <>
     <div style={{
         display: 'flex',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        paddingLeft: '15%',
+        paddingRight: '15%',
+        background: '#f7f8f9',
     }}>
         <div>
             core ai

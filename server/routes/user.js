@@ -3,6 +3,7 @@ const { authenticateJwt, SECRET } = require("../middleware/auth");
 const { User, Course, Admin } = require("../db");
 const router = express.Router();
 const jwt = require('jsonwebtoken');
+const nodemailer = require('nodemailer');
 
 router.get('/me', authenticateJwt, async (req, res) => {
     const user = await User.findOne({username : req.user.username})
@@ -43,7 +44,7 @@ router.get('/courses', async (req, res) => {
     res.json({ courses });
   });
 
-router.get('/course/:courseId', authenticateJwt, async (req, res) => {
+router.get('/course/:courseId', async (req, res) => {
     const courseId = req.params.courseId;
     const course = await Course.findById(courseId);
     res.json({ course });

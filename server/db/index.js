@@ -14,7 +14,13 @@ const adminSchema = new mongoose.Schema({
 const courseSchema = new mongoose.Schema({
     title: String,
     description: String,
-    price: Number
+    price: Number,
+    module: Array,
+    curriculum: String,
+    project: String,
+    guidance: String,
+    Tools: String,
+    career: String
   });
 
 const User = mongoose.model('User', userSchema);

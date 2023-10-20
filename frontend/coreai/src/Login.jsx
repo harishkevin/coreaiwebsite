@@ -1,6 +1,19 @@
-import {Typography, Button, TextField} from '@mui/material'
+import {Typography, Button, TextField} from '@mui/material';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import {useSetRecoilState} from 'recoil';
+import {userState} from './assets/store/atoms/user.js'
+
+// const host = window.location.host
+const host = 'localhost:3000'
+
 
 function Login() {
+
+    const [username, setUsername] = useState()
+    const [password, setPassword] = useState()
+    const navigate = useNavigate()
+    const setUser = useSetRecoilState(userState)
     
     return <>
     <div style={{
@@ -9,11 +22,10 @@ function Login() {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '90vh'
+        height: '80vh'
     }}>
-        <div style={{
+        <div className='enrollCard' style={{
             background: '#6837f5',
-            width: '25%',
             borderRadius: 20,
             display: 'flex',
             flexDirection: 'column',
@@ -26,11 +38,16 @@ function Login() {
             <Typography variant='h5' style={{
                 color: 'white',
                 fontFamily: 'LufgaR'
-            }}>Login in to your account</Typography>
+            }}>Log in to your account</Typography>
             <br />
-            <TextField style={{width: '85%'}} label="email" variant='outlined' size='small' InputLabelProps={{style: {fontFamily: 'LufgaR', color: 'white'}}}></TextField>
+            <TextField style={{width: '85%'}} label="email" variant='outlined' size='small' type='text' InputLabelProps={{style: {fontFamily: 'LufgaR', color: 'white'}}} onChange={(e)=>{
+                setUsername(e.target.value)
+            }}></TextField>
             <br />
-            <TextField style={{width: '85%'}} label="password" variant='outlined' size='small' InputLabelProps={{style: {fontFamily: 'LufgaR', color: 'white'}}}></TextField>
+            <TextField style={{width: '85%'}} label="password" variant='outlined' size='small' type='password' InputLabelProps={{style: {fontFamily: 'LufgaR', color: 'white'}}} onChange={(e)=>{
+                setPassword(e.target.value)
+            }}></TextField>
+            <br />
             <br />
             <Button variant='contained' style={{
                  textTransform : 'none',
@@ -39,9 +56,30 @@ function Login() {
                  fontFamily: 'LufgaR',
                  boxShadow: 'none',
                  width: '85%'
+            }} onClick={()=>{
+                fetch(`http://${host}/user/login`,{
+                method: 'POST',
+                body: JSON.stringify({
+                    username: username,
+                    password: password
+                }),
+                headers: {
+                    'content-type': 'application/json'
+                }
+            }).then((res) =>{
+                res.json().then((data) =>{
+                    console.log(data)
+                    localStorage.setItem('token', data.token)
+                    setUser({
+                        isLoading: false,
+                        userEmail: username
+                    })
+                    navigate('/')
+                })
+            })
             }}>Log in</Button>
             <br />
-            <Typography style={{
+            {/* <Typography style={{
                     color: '#86868B',
                     fontFamily: 'LufgaR',
                     paddingTop: 6
@@ -66,7 +104,7 @@ function Login() {
                  width: '85%',
                  color: 'black'
             }}> <div style={{display: 'flex', justifyContent: 'space-between'}}><img style={{width: '7%'}} src="../assets/linkedin4.png" alt="" /><div style={{margin:'0 auto'}}>Continue with linkedin</div></div></Button>
-            <br />
+            <br /> */}
             <div style={{
                 display: 'flex'
             }}>
@@ -74,7 +112,7 @@ function Login() {
                     color: '#86868B',
                     fontFamily: 'LufgaR',
                     paddingTop: 6
-                }}>Don't have an account?</Typography>
+                }}>Don't an account?</Typography>
                 <Button style={{
                     textTransform: 'capitalize',
                     color: '#fe7f21'

@@ -42,3 +42,307 @@ body, html {
 .logo:hover {
   background: none;
 }
+
+.logoTypo {
+  color: white;
+  font-family: LufgaR;
+  text-transform: lowercase;
+}
+
+/* .course:hover {
+  transform: scale(1.2);
+  background: #6837f5;
+  color: white;
+} */
+
+.course {
+  background: #f4f4f4;
+  border-radius: 30px;
+  padding: 20px;
+  width: 28%;
+  height: 35%;
+  transition: transform 0.3s, background 0.3s, color 0.3s;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+
+.paddingLR {
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.changeWidth {
+  width: 50%
+}
+
+.width60 {
+  width: 60%
+}
+
+.width40 {
+  width: 40%
+}
+
+.width30 {
+  width: 30%;
+}
+
+.width22 {
+  width: 22%;
+}
+
+.courseList {
+  width: 17.5%;
+  background: #f4f4f4;
+  border-radius: 30px;
+  padding: 20px;
+  height: 250px;
+  box-shadow: 0px 0px 30px 4px rgba(220,220,220,1);
+  transition: transform 0.3s, background 0.3s, color 0.3s;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.courseList:hover {
+  transform: scale(1.2);
+  background: #6837f5;
+  color: white;
+}
+
+.testimonyCard{
+  width: 22%;
+}
+
+.aboutCard {
+  width: 35%;
+}
+
+.webCompany {
+  width: 100%;
+  height: 13vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.mobileCompany {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.seeAllCoursesDiv {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  height: 100%;
+  align-items: center;
+  width: 100%;
+}
+
+.seeAllCoursesMainDiv {
+  background: #0f0c20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 15%;
+  padding-right: 15%;
+  height: 80vh;
+}
+
+.selectedCourseCard {
+  width: 17%;
+}
+
+.selectedCourseImg {
+  height: 50%;
+}
+
+.priceCard {
+  height: 80vh;
+}
+
+.priceCardFlexCont {
+  height: 85%;
+}
+
+.enrollCard {
+  width: 25%;
+}
+
+.appBar {
+  height: 10vh;
+  align-items: center;
+}
+
+.webBar {
+  display: none;
+}
+
+.mobileBar {
+  display: none;
+}
+
+@media (max-width:800px) {
+  .paddingLR {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+@media (max-width:500px) {
+  .flexSwitch {
+    flex-direction: column;
+  }
+
+  .changeWidth {
+    width: 100%;
+  }
+
+  .courseList {
+    width: 70%;
+    background: #f4f4f4;
+    border-radius: 30px;
+    padding: 20px;
+    height: 250px;
+    box-shadow: 0px 0px 30px 4px rgba(220,220,220,1);
+  }
+
+  .testimonyCard{
+    width: 66%;
+  }
+
+  .aboutCard {
+    width: 70%;
+  }
+
+  .mainHeadingWeb {
+    display: none;
+  }
+
+  .mobileTopBottomSpace {
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
+
+  .increaseHeightAboutUs {
+    height: 650px;
+  }
+
+  .increaseHeightCourseList {
+    height: 1300px;
+  }
+
+  .increaseHeightFeedback {
+    height: 1200px;
+  }
+
+  .increaseHeightCompany {
+    height: 600px;
+  }
+
+  .webCompany {
+    display: none;
+  }
+
+  .seeAllCoursesMainDiv {
+    background: #0f0c20;
+    align-items: center;
+    padding-left: 0%;
+  padding-right: 0%;
+    height: auto;
+  }
+
+  .seeAllCoursesDiv{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .course {
+    background: #f4f4f4;
+    border-radius: 30px;
+    padding: 20px;
+    width: 70%;
+    height: 250px;
+    transition: transform 0.3s, background 0.3s, color 0.3s;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .selectedCourseCard {
+    width: 70%;
+    border-top: 10px;
+    border-bottom: 10px;
+  }
+
+  .selectedCourseImg {
+    height: 35%;
+  }
+
+  .priceCard {
+    height: auto;
+  }
+
+  .priceCardFlexCont {
+    align-items: center;
+    height: 1600px;
+  }
+
+  .priceCardFlexItem {
+    height: 500px;
+    width: 85%;
+
+  }
+
+  .enrollCard {
+    width: 80%;
+  }
+
+  .appBar {
+    height: auto;
+    align-items: flex-start;
+  }
+
+  .mobileBar {
+    display: flex;
+    justify-content: space-between;
+    background: #0f0c20;
+  }
+
+  .mobHeight {
+    height: 1300px;
+  }
+
+}
+
+@media (min-width: 500px) {
+
+  .mainHeadingMobile {
+    display: none;
+  }
+
+  .mobileCompany {
+    display: none;
+  }
+
+  .webBar {
+    display: flex;
+    justify-content: space-between;
+    background: #0f0c20;
+  }
+
+}
