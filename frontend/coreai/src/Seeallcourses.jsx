@@ -22,7 +22,7 @@ function Seeallcourses() {
                                 height: '60%',
                                 objectFit: 'cover',
                                 objectPosition: '0 1%'
-                            }} src={"../assets/cover/" + course.title + '.jpeg'} alt="" />
+                            }} src={"./src/assets/images/cover/" + course.title + '.jpeg'} alt="" />
                             
                         {/* </div> */}
                         {/* <Typography style={{fontFamily: 'LufgaR', color:'#86868B'}}>{course.description}</Typography> */}

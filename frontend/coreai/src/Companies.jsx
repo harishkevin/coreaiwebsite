@@ -10,45 +10,45 @@ function Companies() {
         <img style={{
             height: '30%',
             width: 'auto'
-        }} src="../assets/tcs.png" alt="" />
+        }} src="./src/assets/images/tcs.png" alt="" />
         <img style={{
             height: '30%',
             width: 'auto'
-        }} src="../assets/zf.png" alt="" />
+        }} src="./src/assets/images/zf.png" alt="" />
         <img style={{
             height: '30%',
             width: 'auto'
-        }} src="../assets/cts.png" alt="" />
+        }} src="./src/assets/images/cts.png" alt="" />
         <img style={{
             height: '30%',
             width: 'auto'
-        }} src="../assets/capgemini.png" alt="" />
+        }} src="./src/assets/images/capgemini.png" alt="" />
         <img style={{
             height: '30%',
             width: 'auto'
-        }} src="../assets/walmart.png" alt="" />
+        }} src="./src/assets/images/walmart.png" alt="" />
     </div>
     <div className='flexSwitch mobileCompany'>
         <img style={{
             height: '10%',
             width: 'auto'
-        }} src="../assets/tcs.png" alt="" />
+        }} src="./src/assets/images/tcs.png" alt="" />
         <img style={{
             height: '10%',
             width: 'auto'
-        }} src="../assets/zf.png" alt="" />
+        }} src="./src/assets/images/zf.png" alt="" />
         <img style={{
             height: '10%',
             width: 'auto'
-        }} src="../assets/cts.png" alt="" />
+        }} src="./src/assets/images/cts.png" alt="" />
         <img style={{
             height: '10%',
             width: 'auto'
-        }} src="../assets/capgemini.png" alt="" />
+        }} src="./src/assets/images/capgemini.png" alt="" />
         <img style={{
             height: '10%',
             width: 'auto'
-        }} src="../assets/walmart.png" alt="" />
+        }} src="./src/assets/images/walmart.png" alt="" />
     </div>
     </div>
     </>

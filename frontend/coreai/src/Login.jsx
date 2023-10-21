@@ -33,7 +33,7 @@ function Login() {
             paddingTop: '5%',
             paddingBottom: '5%'
         }}>
-            {/* <img style={{width: '30%'}} src="../assets/student3.png" alt="" /> */}
+            {/* <img style={{width: '30%'}} src="./src/assets/images/student3.png" alt="" /> */}
             <br />
             <Typography variant='h5' style={{
                 color: 'white',
@@ -93,7 +93,7 @@ function Login() {
                  boxShadow: 'none',
                  width: '85%',
                  color: 'black'
-            }}> <div style={{display: 'flex', justifyContent: 'space-between'}}><img style={{width: '7%'}} src="../assets/google.png" alt="" /><div style={{margin:'0 auto'}}>Continue with google</div></div></Button>
+            }}> <div style={{display: 'flex', justifyContent: 'space-between'}}><img style={{width: '7%'}} src="./src/assets/images/google.png" alt="" /><div style={{margin:'0 auto'}}>Continue with google</div></div></Button>
             <br />
             <Button variant='contained' style={{
                  textTransform : 'none',
@@ -103,7 +103,7 @@ function Login() {
                  boxShadow: 'none',
                  width: '85%',
                  color: 'black'
-            }}> <div style={{display: 'flex', justifyContent: 'space-between'}}><img style={{width: '7%'}} src="../assets/linkedin4.png" alt="" /><div style={{margin:'0 auto'}}>Continue with linkedin</div></div></Button>
+            }}> <div style={{display: 'flex', justifyContent: 'space-between'}}><img style={{width: '7%'}} src="./src/assets/images/linkedin4.png" alt="" /><div style={{margin:'0 auto'}}>Continue with linkedin</div></div></Button>
             <br /> */}
             <div style={{
                 display: 'flex'

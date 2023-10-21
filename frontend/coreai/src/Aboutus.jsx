@@ -66,7 +66,7 @@ function Aboutus() {
                             height: 60,
                             objectFit: 'cover',
                             objectPosition: '0 1%'
-                        }} src="../assets/instructor1.jpeg" alt="" />
+                        }} src="./src/assets/images/instructor1.jpeg" alt="" />
                         <Typography variant='h6' style={{fontFamily: 'LufgaR'}}>Experienced Instructor</Typography>
                         <br />
                         <Typography style={{

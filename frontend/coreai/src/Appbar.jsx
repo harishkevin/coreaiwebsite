@@ -29,7 +29,7 @@ function Appbar() {
         <div style={{width: '10%', display: 'flex'}} onClick={() => {
                 navigate('/')
             }}>
-            <img style={{width: '90px'}} src="../assets/corelogo.png" alt="" />
+            <img style={{width: '90px'}} src="../src/assets/images/corelogo.png" alt="" />
             <Typography className='logoTypo' variant='h5'>ai</Typography>
         </div>
         <div className='flexSwitch' style={{
@@ -86,7 +86,7 @@ function Appbar() {
         <div style={{width: '10%', display: 'flex'}} onClick={() => {
                 navigate('/')
             }}>
-            <img style={{width: '90px'}} src="../assets/corelogo.png" alt="" />
+            <img style={{width: '90px'}} src="../src/assets/images/corelogo.png" alt="" />
             <Typography className='logoTypo' variant='h5'>ai</Typography>
         </div>
         <div className='flexSwitch' style={{
@@ -149,7 +149,7 @@ function Appbar() {
         <div style={{width: '10%', display: 'flex'}} onClick={() => {
                 navigate('/')
             }}>
-            <img style={{width: '90px'}} src="../assets/corelogo.png" alt="" />
+            <img style={{width: '90px'}} src="../src/assets/images/corelogo.png" alt="" />
             <Typography className='logoTypo' variant='h5'>ai</Typography>
         </div>
         <div className='flexSwitch' style={{
@@ -210,7 +210,7 @@ function Appbar() {
         <div style={{width: '10%', display: 'flex'}} onClick={() => {
                 navigate('/')
             }}>
-            <img style={{width: '90px'}} src="../assets/corelogo.png" alt="" />
+            <img style={{width: '90px'}} src="../src/assets/images/corelogo.png" alt="" />
             <Typography className='logoTypo' variant='h5'>ai</Typography>
         </div>
         <div className='flexSwitch' style={{

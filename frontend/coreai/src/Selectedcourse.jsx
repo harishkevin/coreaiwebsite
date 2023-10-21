@@ -367,25 +367,26 @@ function Tools(props) {
     }}>
         <img className="selectedCourseImg" style={{
             width: 'auto' 
-        }} src={"../assets/icon/"+props.title + ' 1'+'.svg'} alt="" />
+        }} src={"../src/assets/images/icon/"+props.title + ' 1'+'.svg'} alt="" />
         <img className="selectedCourseImg" style={{
             width: 'auto'
-        }} src={"../assets/icon/"+props.title + ' 2'+'.svg'} alt="" />
+        }} src={"../src/assets/images/icon/"+props.title + ' 2'+'.svg'} alt="" />
         <img className="selectedCourseImg" style={{
             width: 'auto'
-        }} src={"../assets/icon/"+props.title + ' 3'+'.svg'} alt="" />
+        }} src={"../src/assets/images/icon/"+props.title + ' 3'+'.svg'} alt="" />
         <img className="selectedCourseImg" style={{
             width: 'auto'
-        }} src={"../assets/icon/"+props.title + ' 4'+'.svg'} alt="" />
+        }} src={"../src/assets/images/icon/"+props.title + ' 4'+'.svg'} alt="" />
         <img className="selectedCourseImg" style={{
             width: 'auto'
-        }} src={"../assets/icon/"+props.title + ' 5'+'.svg'} alt="" />
+        }} src={"../src/assets/images/icon/"+props.title + ' 5'+'.svg'} alt="" />
         <img className="selectedCourseImg" style={{
             width: 'auto'
-        }} src={"../assets/icon/"+props.title + ' 6'+'.svg'} alt="" />
+        }} src={"../src/assets/images/icon/"+props.title + ' 6'+'.svg'} alt="" />
         <img className="selectedCourseImg" style={{
             width: 'auto'
-        }} src={"../assets/icon/"+props.title + ' 7'+'.svg'} alt="" />
+        }} src={"../src/assets/images/icon/"+props.title + ' 7'+'.svg'} alt="" />
+
     </div>
     </div>
     </>

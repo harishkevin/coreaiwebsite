@@ -76,7 +76,7 @@ function Register() {
             paddingBottom: '5%',
             height: '60%'
         }}>
-            {/* <img style={{width: '30%'}} src="../assets/student3.png" alt="" /> */}
+            {/* <img style={{width: '30%'}} src="./src/assets/images/student3.png" alt="" /> */}
             <Typography variant='h5' style={{
                 color: 'white',
                 fontFamily: 'LufgaR'

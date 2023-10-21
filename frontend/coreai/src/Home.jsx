@@ -105,8 +105,8 @@ function Frontbanner() {
             justifyContent: 'center',
             height: 'auto'
         }}>
-            {/* <img style={{width: '60%'}} src="../assets/student4.png" alt="student pic" /> */}
-            {/* <img style={{width: '60%'}} src="../assets/student5.png" alt="student pic" /> */}
+            {/* <img style={{width: '60%'}} src="./src/assets/images/student4.png" alt="student pic" /> */}
+            {/* <img style={{width: '60%'}} src="./src/assets/images/student5.png" alt="student pic" /> */}
             <div style={{
             background: '#6837f5',
             width: '90%',
@@ -118,7 +118,7 @@ function Frontbanner() {
             paddingBottom: '5%',
             height: 500
         }}>
-            {/* <img style={{width: '30%'}} src="../assets/student3.png" alt="" /> */}
+            {/* <img style={{width: '30%'}} src="./src/assets/images/student3.png" alt="" /> */}
             <br />
             <Typography variant='h5' style={{
                 color: 'white',
@@ -243,7 +243,7 @@ function Mentors() {
             <div className='changeWidth mobileTopBottomSpace'>
                 <img style={{
                     width: '100%'
-                }} src="../assets/mentor.jpg" alt="" />
+                }} src="./src/assets/images/mentor.jpg" alt="" />
             </div>
         </div>
     </>
@@ -282,7 +282,7 @@ function Studentfeedback() {
                     height: 300,
                     boxShadow: '0px 0px 30px 4px rgba(230,230,230,1)'
                 }}>
-                    <Avatar alt="Remy Sharp" src="../assets/indianstudent.jpeg" />
+                    <Avatar alt="Remy Sharp" src="./src/assets/images/indianstudent.jpeg" />
                     <br />
                     <Typography style={{
                 fontFamily: 'Regular'
@@ -306,7 +306,7 @@ function Studentfeedback() {
                     height: 300,
                     boxShadow: '0px 0px 30px 4px rgba(220,220,220,1)'
                 }}>
-                    <Avatar alt="Remy Sharp" src="../assets/indianstudent2.jpeg" />
+                    <Avatar alt="Remy Sharp" src="./src/assets/images/indianstudent2.jpeg" />
                     <br />
                     <Typography style={{
                 fontFamily: 'Regular'
@@ -332,7 +332,7 @@ function Studentfeedback() {
                     height: 300,
                     boxShadow: '0px 0px 30px 4px rgba(220,220,220,1)'
                 }}>
-                    <Avatar alt="Remy Sharp" src="../assets/indianstudent3.jpeg" />
+                    <Avatar alt="Remy Sharp" src="./src/assets/images/indianstudent3.jpeg" />
                     <br />
                     <Typography style={{
                 fontFamily: 'Regular'
@@ -375,7 +375,7 @@ function Joinwithus() {
         <div className='changeWidth mobileTopBottomSpace'>
             <img style={{
                 width: '100%'
-            }} src="../assets/join.jpg" alt="" />
+            }} src="./src/assets/images/join.jpg" alt="" />
         </div>
     </div>
     </>

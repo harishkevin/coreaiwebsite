@@ -34,7 +34,7 @@ function Signup() {
             paddingTop: '3%',
             paddingBottom: '3%'
         }}>
-            {/* <img style={{width: '30%'}} src="../assets/student3.png" alt="" /> */}
+            {/* <img style={{width: '30%'}} src="./src/assets/images/student3.png" alt="" /> */}
             <br />
             <Typography variant='h5' style={{
                 color: 'white',
@@ -102,7 +102,7 @@ function Signup() {
                  boxShadow: 'none',
                  width: '85%',
                  color: 'black'
-            }}> <div style={{display: 'flex', justifyContent: 'space-between'}}><img style={{width: '7%'}} src="../assets/google.png" alt="" /><div style={{margin:'0 auto'}}>Sign up with google</div></div></Button>
+            }}> <div style={{display: 'flex', justifyContent: 'space-between'}}><img style={{width: '7%'}} src="./src/assets/images/google.png" alt="" /><div style={{margin:'0 auto'}}>Sign up with google</div></div></Button>
             <br />
             <Button variant='contained' style={{
                  textTransform : 'none',
@@ -112,7 +112,7 @@ function Signup() {
                  boxShadow: 'none',
                  width: '85%',
                  color: 'black'
-            }}> <div style={{display: 'flex', justifyContent: 'space-between'}}><img style={{width: '7%'}} src="../assets/linkedin4.png" alt="" /><div style={{margin:'0 auto'}}>Sign up with linkedin</div></div></Button>
+            }}> <div style={{display: 'flex', justifyContent: 'space-between'}}><img style={{width: '7%'}} src="./src/assets/images/linkedin4.png" alt="" /><div style={{margin:'0 auto'}}>Sign up with linkedin</div></div></Button>
             <br /> */}
             <div style={{
                 display: 'flex'

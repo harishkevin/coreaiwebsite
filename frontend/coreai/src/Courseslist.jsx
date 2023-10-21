@@ -30,7 +30,7 @@ function Courseslist() {
                         height: 60,
                         objectFit: 'cover',
                         objectPosition: '0 1%'
-                    }} src={"../assets/cover/" + course.title + '.jpeg'} alt="" />
+                    }} src={"../src/assets/images/cover/" + course.title + '.jpeg'} alt="" />
                     <Typography variant='h6' style={{fontFamily: 'LufgaR'}}>{course.title}</Typography>
                 </div>
                 {/* <Typography style={{fontFamily: 'LufgaR', color:'#86868B'}}>{course.description}</Typography> */}
