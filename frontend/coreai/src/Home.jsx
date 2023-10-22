@@ -243,7 +243,7 @@ function Mentors() {
             <div className='changeWidth mobileTopBottomSpace'>
                 <img style={{
                     width: '100%'
-                }} src="./src/assets/images/mentor.jpg" alt="" />
+                }} src="./public/images/mentor.jpg" alt="" />
             </div>
         </div>
     </>
@@ -375,7 +375,7 @@ function Joinwithus() {
         <div className='changeWidth mobileTopBottomSpace'>
             <img style={{
                 width: '100%'
-            }} src="./src/assets/images/join.jpg" alt="" />
+            }} src="./public/images/join.jpg" alt="" />
         </div>
     </div>
     </>

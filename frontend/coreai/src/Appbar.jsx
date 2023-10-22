@@ -29,7 +29,7 @@ function Appbar() {
         <div style={{width: '10%', display: 'flex'}} onClick={() => {
                 navigate('/')
             }}>
-            <img style={{width: '90px'}} src="../src/assets/images/corelogo.png" alt="" />
+            <img style={{width: '90px'}} src='../public/images/corelogo.png' alt="" />
             <Typography className='logoTypo' variant='h5'>ai</Typography>
         </div>
         <div className='flexSwitch' style={{
@@ -86,15 +86,15 @@ function Appbar() {
         <div style={{width: '10%', display: 'flex'}} onClick={() => {
                 navigate('/')
             }}>
-            <img style={{width: '90px'}} src="../src/assets/images/corelogo.png" alt="" />
+            <img style={{width: '90px'}} src='../public/images/corelogo.png' alt="" />
             <Typography className='logoTypo' variant='h5'>ai</Typography>
         </div>
         <div className='flexSwitch' style={{
             display: 'flex'
         }}>
             <Button variant='contained' style={{
-                background: '#ff7d6a'
-            }} onClick={toogle}>Down</Button>
+                background: '#fe7f21'
+            }} onClick={toogle}>&#8650;</Button>
             {menuItem && (<div className='flexSwitch' style={{
                 display: 'flex'
             }}>
@@ -149,7 +149,7 @@ function Appbar() {
         <div style={{width: '10%', display: 'flex'}} onClick={() => {
                 navigate('/')
             }}>
-            <img style={{width: '90px'}} src="../src/assets/images/corelogo.png" alt="" />
+            <img style={{width: '90px'}} src='../public/images/corelogo.png' alt="" />
             <Typography className='logoTypo' variant='h5'>ai</Typography>
         </div>
         <div className='flexSwitch' style={{
@@ -210,14 +210,14 @@ function Appbar() {
         <div style={{width: '10%', display: 'flex'}} onClick={() => {
                 navigate('/')
             }}>
-            <img style={{width: '90px'}} src="../src/assets/images/corelogo.png" alt="" />
+            <img style={{width: '90px'}} src='../public/images/corelogo.png' alt="" />
             <Typography className='logoTypo' variant='h5'>ai</Typography>
         </div>
         <div className='flexSwitch' style={{
             display: 'flex'
         }}>
             <Button variant='contained' style={{
-                background: '#ff7d6a'
+                background: '#fe7f21'
             }} onClick={toogle}>&#8650;</Button>
             {menuItem && (<div className='flexSwitch' style={{
                 display: 'flex'
